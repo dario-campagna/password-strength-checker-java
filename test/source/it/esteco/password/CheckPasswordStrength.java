@@ -18,4 +18,9 @@ public class CheckPasswordStrength {
     public void passwordIsStrong() throws Exception {
         assertTrue(new StrengthChecker().isStrongPassword("abcdefgh"));
     }
+
+    @Test
+    public void passwordContainsNoAlpha() throws Exception {
+        assertFalse(new StrengthChecker().isStrongPassword("12345678"));
+    }
 }
