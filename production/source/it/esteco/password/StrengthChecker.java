@@ -1,16 +1,16 @@
 package it.esteco.password;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.List;
 
 public class StrengthChecker {
-    public boolean isStrongPassword(String password) {
-        return password.length() > 7 && atLeastOneAlpha(password) ? true : false;
+    private List<StrengthRule> strengthRules;
+
+    public StrengthChecker(List<StrengthRule> strengthRules) {
+        this.strengthRules = strengthRules;
     }
 
-    private boolean atLeastOneAlpha(CharSequence password) {
-        Pattern pattern = Pattern.compile("[a-zA-Z]");
-        Matcher matcher = pattern.matcher(password);
-        return matcher.find();
+    public boolean isStrongPassword(String password) {
+        return strengthRules.stream().allMatch(rule -> rule.isSatisfiedBy(password));
     }
+
 }
