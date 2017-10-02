@@ -1,4 +1,4 @@
-#Password Strength Checker
+# Password Strength Checker
 
 We want to implement a password checker using TDD.
 
