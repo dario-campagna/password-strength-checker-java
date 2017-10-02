@@ -18,5 +18,3 @@ little orthogonal dimensions.
 > \- *Kent Beck, TDD By Example*
 
 You will find that writing isolated tests for the password checker isn't so easy.
-
-Exercise from: http://permalink.gmane.org/gmane.comp.programming.test-driven-development/33102
